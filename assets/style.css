@@ -1,0 +1,406 @@
+/* AFK Farms — site style
+   Concept: an enchanting-table ledger at night. Cool obsidian ground,
+   XP-orb green + enchantment purple as the two accents, gold for numbers.
+   Rarity tags reuse Minecraft's own tooltip color convention
+   (white=common, yellow=uncommon, aqua=rare, light purple=epic). */
+
+:root {
+  --bg: #f5f1e8;
+  --bg-card: #ffffff;
+  --bg-raised: #fbf8f1;
+  --text: #211d17;
+  --text-dim: #6b6255;
+  --border: rgba(33, 29, 23, 0.12);
+  --accent: #2f9160;
+  --accent-soft: rgba(47, 145, 96, 0.12);
+  --accent2: #7c5cd6;
+  --accent2-soft: rgba(124, 92, 214, 0.12);
+  --gold: #a97a1f;
+  --shadow: 0 1px 2px rgba(33,29,23,0.06), 0 8px 24px rgba(33,29,23,0.06);
+
+  --rarity-common: #4b4638;
+  --rarity-uncommon: #a97a1f;
+  --rarity-rare: #1c8f8f;
+  --rarity-epic: #9b3fd6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0e14;
+    --bg-card: #12161f;
+    --bg-raised: #171c27;
+    --text: #e4e9f2;
+    --text-dim: #8b93a7;
+    --border: rgba(255,255,255,0.08);
+    --accent: #5cc98a;
+    --accent-soft: rgba(92, 201, 138, 0.14);
+    --accent2: #b28dff;
+    --accent2-soft: rgba(178, 141, 255, 0.14);
+    --gold: #e8b84b;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px rgba(0,0,0,0.35);
+
+    --rarity-common: #cfd6e3;
+    --rarity-uncommon: #ffd866;
+    --rarity-rare: #4fd8d8;
+    --rarity-epic: #d9a8ff;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0b0e14;
+  --bg-card: #12161f;
+  --bg-raised: #171c27;
+  --text: #e4e9f2;
+  --text-dim: #8b93a7;
+  --border: rgba(255,255,255,0.08);
+  --accent: #5cc98a;
+  --accent-soft: rgba(92, 201, 138, 0.14);
+  --accent2: #b28dff;
+  --accent2-soft: rgba(178, 141, 255, 0.14);
+  --gold: #e8b84b;
+  --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 32px rgba(0,0,0,0.35);
+  --rarity-common: #cfd6e3;
+  --rarity-uncommon: #ffd866;
+  --rarity-rare: #4fd8d8;
+  --rarity-epic: #d9a8ff;
+}
+
+:root[data-theme="light"] {
+  --bg: #f5f1e8;
+  --bg-card: #ffffff;
+  --bg-raised: #fbf8f1;
+  --text: #211d17;
+  --text-dim: #6b6255;
+  --border: rgba(33, 29, 23, 0.12);
+  --accent: #2f9160;
+  --accent-soft: rgba(47, 145, 96, 0.12);
+  --accent2: #7c5cd6;
+  --accent2-soft: rgba(124, 92, 214, 0.12);
+  --gold: #a97a1f;
+  --shadow: 0 1px 2px rgba(33,29,23,0.06), 0 8px 24px rgba(33,29,23,0.06);
+  --rarity-common: #4b4638;
+  --rarity-uncommon: #a97a1f;
+  --rarity-rare: #1c8f8f;
+  --rarity-epic: #9b3fd6;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  color-scheme: light dark;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  text-wrap: balance;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 .3em; }
+h2 { font-size: 1.5rem; margin: 2.2em 0 .6em; color: var(--text); }
+h3 { font-size: 1.15rem; margin: 1.6em 0 .5em; }
+
+p { color: var(--text); }
+p.lead { color: var(--text-dim); font-size: 1.1rem; max-width: 62ch; }
+
+a { color: var(--accent2); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--accent); }
+
+code, pre, .mono {
+  font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+code {
+  background: var(--accent-soft);
+  color: var(--accent);
+  padding: .15em .4em;
+  border-radius: 5px;
+  font-size: .9em;
+}
+
+pre {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  overflow-x: auto;
+  box-shadow: var(--shadow);
+}
+pre code { background: none; color: var(--text); padding: 0; }
+
+blockquote {
+  margin: 1.4em 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--gold);
+  background: linear-gradient(90deg, rgba(233,184,75,0.1), transparent);
+  border-radius: 0 10px 10px 0;
+  color: var(--text-dim);
+}
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2.5em 0; }
+
+/* ── Top bar / nav ─────────────────────────────────────────────── */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  border-bottom: 1px solid var(--border);
+}
+
+.topbar-inner {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.brand:hover { color: var(--accent); }
+.brand .orb {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 10px 2px var(--accent-soft);
+  display: inline-block;
+}
+
+nav.pills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+nav.pills a {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: .85rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  text-decoration: none;
+  padding: 7px 13px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  transition: color .15s ease, border-color .15s ease, transform .15s ease, background .15s ease;
+  white-space: nowrap;
+}
+
+nav.pills a:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+
+nav.pills a.active {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+nav.pills a.lang {
+  color: var(--accent2);
+  border-color: var(--accent2-soft);
+}
+nav.pills a.lang:hover { border-color: var(--accent2); }
+
+/* ── Hero ──────────────────────────────────────────────────────── */
+
+.hero {
+  position: relative;
+  margin: 40px 0 24px;
+  padding: 36px 0 8px;
+}
+
+.hero .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .78rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  background: var(--accent2-soft);
+  padding: 5px 12px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+/* ── Cards & sections ──────────────────────────────────────────── */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  box-shadow: var(--shadow);
+  margin: 20px 0;
+}
+
+.grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  margin: 28px 0;
+}
+
+.grid .card { margin: 0; }
+
+.card h3 {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card .icon {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 6px var(--accent-soft));
+}
+
+.card p { color: var(--text-dim); font-size: .95rem; margin-bottom: 0; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 600;
+  font-size: .92rem;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #06170e;
+  text-decoration: none;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 14px var(--accent-soft);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { color: #06170e; transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-soft); }
+
+.btn.ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+  box-shadow: none;
+}
+.btn.ghost:hover { border-color: var(--accent2); color: var(--accent2); }
+
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 22px 0; }
+
+/* ── Tables (loot tables) ──────────────────────────────────────── */
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  margin: 20px 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--bg-card);
+  font-size: .93rem;
+  min-width: 480px;
+}
+
+thead th {
+  text-align: left;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .72rem;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-raised);
+}
+
+tbody td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: var(--accent-soft); }
+
+td .mob { font-weight: 600; }
+
+/* Rarity tags — same convention Minecraft uses in item tooltips */
+.tag {
+  display: inline-block;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: .74rem;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.tag.common    { color: var(--rarity-common); background: color-mix(in srgb, var(--rarity-common) 14%, transparent); }
+.tag.uncommon  { color: var(--rarity-uncommon); background: color-mix(in srgb, var(--rarity-uncommon) 14%, transparent); }
+.tag.rare      { color: var(--rarity-rare); background: color-mix(in srgb, var(--rarity-rare) 14%, transparent); }
+.tag.epic      { color: var(--rarity-epic); background: color-mix(in srgb, var(--rarity-epic) 14%, transparent); }
+
+/* ── Footnote / callouts ───────────────────────────────────────── */
+
+.note {
+  font-size: .88rem;
+  color: var(--text-dim);
+  margin-top: -8px;
+}
+
+.footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: .85rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.footer a { color: var(--text-dim); }
+.footer a:hover { color: var(--accent); }
+
+@media (max-width: 600px) {
+  .topbar-inner { padding: 12px 16px; }
+  .wrap { padding: 0 16px 72px; }
+  nav.pills { gap: 6px; }
+  nav.pills a { padding: 6px 10px; font-size: .8rem; }
+}

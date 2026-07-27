@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog — AFK Farms</title>
+<meta name="description" content="Histórico de atualizações do mod AFK Farms.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="orb"></span>AFK Farms</a>
+  <nav class="pills">
+    <a href="index.html">🏠 Início</a>
+    <a href="farms.html">📋 Farms</a>
+    <a href="tanque-xp.html">🧪 Tanque de XP</a>
+    <a href="frasco-alma.html">🧴 Frasco de Alma</a>
+    <a href="config.html">⚙️ Config</a>
+    <a class="active" href="changelog.html">📜 Changelog</a>
+    <a class="lang" href="en/changelog.html">🇬🇧 English</a>
+  </nav>
+</div></div>
+<div class="wrap">
+
+<div class="hero">
+  <span class="eyebrow">Histórico</span>
+  <h1>Changelog</h1>
+</div>
+
+<h2>AFK Farms — v1.2.0</h2>
+
+<h3>Novidades</h3>
+<ul>
+  <li><strong>Tanque de XP</strong> — armazena automaticamente o XP de todas as Farms AFK do mesmo chunk.</li>
+  <li>Guarda até <strong>nível 30</strong>. Depois de cheio, o XP extra é perdido até você coletar.</li>
+  <li>Exibição flutuante com Nível + barra de progresso, e o vidro enche com líquido verde. Só aparece mirando no tanque a até 8 blocos.</li>
+  <li>Três formas de coletar: mão vazia (tudo), Frasco de Vidro (vira Frasco de XP), item danificado c/ Remendo (repara na hora).</li>
+  <li>Receita: 4 Lingotes de Ferro + 4 Vidros + 1 Frasco de Experiência.</li>
+</ul>
+
+<h3>Reformulação das Farms</h3>
+<ul>
+  <li>Todos os drops refeitos pra bater com as <strong>loot tables reais do vanilla</strong>.</li>
+  <li><strong>Item de ativação não dura mais pra sempre</strong> — 64 usos por padrão, depois quebra.</li>
+  <li>2 farms novas: Breeze e Wither Skeleton (via Frasco de Alma).</li>
+  <li>Combustível configurável por tipo, incluindo Pólvora de Blaze e Estrela do Nether.</li>
+  <li>Novo <code>config.json</code> pra ajustar tudo sem mexer em código.</li>
+</ul>
+
+<h3>Frasco de Alma</h3>
+<ul>
+  <li>Pros mobs mais perigosos, fabrique um Frasco de Alma vazio e mate o mob de verdade pra capturar.</li>
+  <li>Segue a mesma regra de durabilidade dos outros itens de ativação.</li>
+  <li>Modelo troca sozinho entre vazio e cheio de essência.</li>
+</ul>
+
+<h3>Correções</h3>
+<ul>
+  <li>Esqueleto/Wither Skeleton não giram mais o braço errado — agora miram o arco ou erguem a espada corretamente.</li>
+  <li>Guia das Farms atualizado com Tanque de XP, Frasco de Alma e durabilidade.</li>
+  <li>Farm AFK do Nether não aceita mais item de ativação de outra farm.</li>
+</ul>
+
+<h3>15 Farms Novas</h3>
+<p><strong>9 farms simples:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Mob</th><th>Item de ativação</th><th>Bloco</th></tr></thead><tbody>
+<tr><td>Zumbi</td><td>Carne Podre</td><td>Farm AFK</td></tr>
+<tr><td>Husk</td><td>Areia</td><td>Farm AFK</td></tr>
+<tr><td>Aranha da Caverna</td><td>Olho de Aranha Fermentado</td><td>Farm AFK</td></tr>
+<tr><td>Lula</td><td>Saco de Tinta</td><td>Farm AFK</td></tr>
+<tr><td>Lula Brilhante</td><td>Saco de Tinta Brilhante</td><td>Farm AFK</td></tr>
+<tr><td>Cubo de Magma</td><td>Creme de Magma</td><td>Farm AFK</td></tr>
+<tr><td>Fantasma</td><td>Membrana de Fantasma</td><td>Farm AFK</td></tr>
+<tr><td>Tartaruga</td><td>Escama de Tartaruga</td><td>Farm AFK</td></tr>
+<tr><td>Piglin Zumbi</td><td>Lingote de Ouro</td><td>Farm AFK do Nether</td></tr>
+</tbody></table></div>
+
+<p><strong>6 farms com Frasco de Alma:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Mob</th><th>Drop de destaque</th><th>Bloco</th></tr></thead><tbody>
+<tr><td>Afogado</td><td>Lingote de Cobre (~11%)</td><td>Farm AFK</td></tr>
+<tr><td>Guardião</td><td>Prismarine + Bacalhau</td><td>Farm AFK</td></tr>
+<tr><td>Guardião Ancião</td><td>+ Esponja Molhada garantida</td><td>Farm AFK</td></tr>
+<tr><td>Ghast</td><td>Lágrima de Ghast + Pólvora</td><td>Farm AFK do Nether</td></tr>
+<tr><td>Shulker</td><td>Casco de Shulker (~50%)</td><td>Farm AFK do Nether</td></tr>
+<tr><td>Hoglin</td><td>Costeleta + Couro</td><td>Farm AFK do Nether</td></tr>
+</tbody></table></div>
+
+<h3>🚧 Próximas atualizações</h3>
+<p>A definir.</p>
+
+<div class="footer">
+  <span>AFK Farms · Fabric 1.21.11</span>
+  <a href="https://github.com/NoviscK/afkfarms">GitHub</a>
+</div>
+</div>
+</body>
+</html>

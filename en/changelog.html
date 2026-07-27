@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog — AFK Farms</title>
+<meta name="description" content="Update history for the AFK Farms mod.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="orb"></span>AFK Farms</a>
+  <nav class="pills">
+    <a href="index.html">🏠 Home</a>
+    <a href="farms.html">📋 Farms</a>
+    <a href="xp-tank.html">🧪 XP Tank</a>
+    <a href="soul-bottle.html">🧴 Soul Bottle</a>
+    <a href="config.html">⚙️ Config</a>
+    <a class="active" href="changelog.html">📜 Changelog</a>
+    <a class="lang" href="../changelog.html">🇧🇷 Português</a>
+  </nav>
+</div></div>
+<div class="wrap">
+
+<div class="hero">
+  <span class="eyebrow">History</span>
+  <h1>Changelog</h1>
+</div>
+
+<h2>AFK Farms — v1.2.0</h2>
+
+<h3>New Features</h3>
+<ul>
+  <li><strong>XP Tank</strong> — automatically stores XP from every AFK Farm in the same chunk.</li>
+  <li>Holds up to <strong>level 30</strong>. Once full, extra XP is lost until collected.</li>
+  <li>Floating Level + progress bar display, glass fills with green liquid. Only shows aiming at the tank within 8 blocks.</li>
+  <li>Three ways to collect: empty hand (all), Glass Bottle (Bottle o' XP), damaged item w/ Mending (instant repair).</li>
+  <li>Recipe: 4 Iron Ingots + 4 Glass + 1 Bottle o' Enchanting.</li>
+</ul>
+
+<h3>Farm Overhaul</h3>
+<ul>
+  <li>All drops rebuilt to match <strong>vanilla's real loot tables</strong>.</li>
+  <li><strong>Activation items no longer last forever</strong> — 64 uses by default, then break.</li>
+  <li>2 new farms: Breeze and Wither Skeleton (via Soul Bottle).</li>
+  <li>Fuel configurable per-type, including Blaze Powder and Nether Star.</li>
+  <li>New <code>config.json</code> to tune everything without touching code.</li>
+</ul>
+
+<h3>Soul Bottle</h3>
+<ul>
+  <li>For the most dangerous mobs, craft an empty Soul Bottle and really kill the mob to capture it.</li>
+  <li>Follows the same durability rule as other activation items.</li>
+  <li>Model swaps automatically between empty and essence-filled.</li>
+</ul>
+
+<h3>Fixes</h3>
+<ul>
+  <li>Skeleton/Wither Skeleton no longer swing the wrong arm — now properly aim the bow or raise the sword.</li>
+  <li>Farm Guide book updated with XP Tank, Soul Bottle, and durability.</li>
+  <li>AFK Nether Farm no longer accepts another farm's activation item.</li>
+</ul>
+
+<h3>15 New Farms</h3>
+<p><strong>9 simple farms:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Mob</th><th>Activation item</th><th>Block</th></tr></thead><tbody>
+<tr><td>Zombie</td><td>Rotten Flesh</td><td>AFK Farm</td></tr>
+<tr><td>Husk</td><td>Sand</td><td>AFK Farm</td></tr>
+<tr><td>Cave Spider</td><td>Fermented Spider Eye</td><td>AFK Farm</td></tr>
+<tr><td>Squid</td><td>Ink Sac</td><td>AFK Farm</td></tr>
+<tr><td>Glow Squid</td><td>Glow Ink Sac</td><td>AFK Farm</td></tr>
+<tr><td>Magma Cube</td><td>Magma Cream</td><td>AFK Farm</td></tr>
+<tr><td>Phantom</td><td>Phantom Membrane</td><td>AFK Farm</td></tr>
+<tr><td>Turtle</td><td>Turtle Scute</td><td>AFK Farm</td></tr>
+<tr><td>Zombified Piglin</td><td>Gold Ingot</td><td>AFK Nether Farm</td></tr>
+</tbody></table></div>
+
+<p><strong>6 Soul Bottle farms:</strong></p>
+<div class="table-wrap"><table><thead><tr><th>Mob</th><th>Notable drop</th><th>Block</th></tr></thead><tbody>
+<tr><td>Drowned</td><td>Copper Ingot (~11%)</td><td>AFK Farm</td></tr>
+<tr><td>Guardian</td><td>Prismarine + Cod</td><td>AFK Farm</td></tr>
+<tr><td>Elder Guardian</td><td>+ guaranteed Wet Sponge</td><td>AFK Farm</td></tr>
+<tr><td>Ghast</td><td>Ghast Tear + Gunpowder</td><td>AFK Nether Farm</td></tr>
+<tr><td>Shulker</td><td>Shulker Shell (~50%)</td><td>AFK Nether Farm</td></tr>
+<tr><td>Hoglin</td><td>Porkchop + Leather</td><td>AFK Nether Farm</td></tr>
+</tbody></table></div>
+
+<h3>🚧 Coming Next</h3>
+<p>TBD.</p>
+
+<div class="footer">
+  <span>AFK Farms · Fabric 1.21.11</span>
+  <a href="https://github.com/NoviscK/afkfarms">GitHub</a>
+</div>
+</div>
+</body>
+</html>

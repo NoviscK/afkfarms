@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configuração — AFK Farms</title>
+<meta name="description" content="Como ajustar drops, xp, combustível e durabilidade via config.json.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="orb"></span>AFK Farms</a>
+  <nav class="pills">
+    <a href="index.html">🏠 Início</a>
+    <a href="farms.html">📋 Farms</a>
+    <a href="tanque-xp.html">🧪 Tanque de XP</a>
+    <a href="frasco-alma.html">🧴 Frasco de Alma</a>
+    <a class="active" href="config.html">⚙️ Config</a>
+    <a href="changelog.html">📜 Changelog</a>
+    <a class="lang" href="en/config.html">🇬🇧 English</a>
+  </nav>
+</div></div>
+<div class="wrap">
+
+<div class="hero">
+  <span class="eyebrow">Configuração</span>
+  <h1><code>config.json</code></h1>
+  <p class="lead">Todas as farms, combustíveis e regras globais são controladas por um único arquivo, gerado automaticamente na primeira vez que o mod carrega — <code>config/nvkmods/config.json</code>. Edite e reinicie o mundo/servidor pra aplicar.</p>
+</div>
+
+<h2>Configurações globais</h2>
+<pre><code>"global_settings": {
+  "xp_tank_max_level": 30,
+  "allow_mending_repair": true,
+  "allow_bottle_fill": true,
+  "consume_input_item": true,
+  "input_item_durability_uses": 64
+}</code></pre>
+
+<div class="table-wrap"><table><thead><tr><th>Campo</th><th>O que faz</th></tr></thead><tbody>
+<tr><td><code>xp_tank_max_level</code></td><td>Nível máximo que o <a href='tanque-xp.html'>Tanque de XP</a> guarda.</td></tr>
+<tr><td><code>allow_mending_repair</code></td><td>Liga/desliga o reparo instantâneo com Remendo.</td></tr>
+<tr><td><code>allow_bottle_fill</code></td><td>Liga/desliga a criação de Frasco de Experiência.</td></tr>
+<tr><td><code>consume_input_item</code></td><td>Se <code>false</code>, o item de ativação nunca se gasta.</td></tr>
+<tr><td><code>input_item_durability_uses</code></td><td>Quantos ciclos cada item de ativação aguenta por padrão.</td></tr>
+</tbody></table></div>
+
+<h2>Combustíveis</h2>
+<pre><code>{ "fuel_id": "minecraft:coal", "burn_time_seconds": 300, "drop_interval_seconds": 60 }</code></pre>
+<p>Cada combustível define quanto tempo dura (<code>burn_time_seconds</code>) e a velocidade de produção enquanto ativo (<code>drop_interval_seconds</code>).</p>
+
+<h2>Farms</h2>
+<p>Cada farm no array <code>farms</code> define: <code>farm_id</code>, <code>input_item</code> (ou <code>requires_soul_jar: true</code>), <code>xp_per_drop</code>, <code>allowed_fuels</code>, <code>entity_type</code>, <code>scale</code>/<code>y_offset</code>, <code>hostile</code>, <code>held_item</code>, <code>max_uses</code> e <code>drops</code> (lista de <code>item_id</code>, <code>chance_percent</code>, <code>min_count</code>, <code>max_count</code>), além de <code>farm_block</code>.</p>
+<blockquote>Quer adicionar uma farm nova? Copie um bloco existente no array, mude os valores, e reinicie — sem precisar editar nenhum código.</blockquote>
+
+<div class="footer">
+  <span>AFK Farms · Fabric 1.21.11</span>
+  <a href="https://github.com/NoviscK/afkfarms">GitHub</a>
+</div>
+</div>
+</body>
+</html>

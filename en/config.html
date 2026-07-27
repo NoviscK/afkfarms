@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Configuration — AFK Farms</title>
+<meta name="description" content="How to tune drops, xp, fuel and durability via config.json.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A7%AA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<div class="topbar"><div class="topbar-inner">
+  <a class="brand" href="index.html"><span class="orb"></span>AFK Farms</a>
+  <nav class="pills">
+    <a href="index.html">🏠 Home</a>
+    <a href="farms.html">📋 Farms</a>
+    <a href="xp-tank.html">🧪 XP Tank</a>
+    <a href="soul-bottle.html">🧴 Soul Bottle</a>
+    <a class="active" href="config.html">⚙️ Config</a>
+    <a href="changelog.html">📜 Changelog</a>
+    <a class="lang" href="../config.html">🇧🇷 Português</a>
+  </nav>
+</div></div>
+<div class="wrap">
+
+<div class="hero">
+  <span class="eyebrow">Configuration</span>
+  <h1><code>config.json</code></h1>
+  <p class="lead">Every farm, fuel, and global rule is controlled by a single file, auto-generated the first time the mod loads — <code>config/nvkmods/config.json</code>. Edit and restart the world/server to apply.</p>
+</div>
+
+<h2>Global settings</h2>
+<pre><code>"global_settings": {
+  "xp_tank_max_level": 30,
+  "allow_mending_repair": true,
+  "allow_bottle_fill": true,
+  "consume_input_item": true,
+  "input_item_durability_uses": 64
+}</code></pre>
+
+<div class="table-wrap"><table><thead><tr><th>Field</th><th>What it does</th></tr></thead><tbody>
+<tr><td><code>xp_tank_max_level</code></td><td>Max level the <a href='xp-tank.html'>XP Tank</a> stores.</td></tr>
+<tr><td><code>allow_mending_repair</code></td><td>Toggles instant Mending repair.</td></tr>
+<tr><td><code>allow_bottle_fill</code></td><td>Toggles creating Bottles o' Enchanting.</td></tr>
+<tr><td><code>consume_input_item</code></td><td>If <code>false</code>, activation items never wear out.</td></tr>
+<tr><td><code>input_item_durability_uses</code></td><td>How many cycles each activation item survives by default.</td></tr>
+</tbody></table></div>
+
+<h2>Fuels</h2>
+<pre><code>{ "fuel_id": "minecraft:coal", "burn_time_seconds": 300, "drop_interval_seconds": 60 }</code></pre>
+<p>Each fuel defines how long it lasts (<code>burn_time_seconds</code>) and the production speed while active (<code>drop_interval_seconds</code>).</p>
+
+<h2>Farms</h2>
+<p>Each entry in the <code>farms</code> array defines: <code>farm_id</code>, <code>input_item</code> (or <code>requires_soul_jar: true</code>), <code>xp_per_drop</code>, <code>allowed_fuels</code>, <code>entity_type</code>, <code>scale</code>/<code>y_offset</code>, <code>hostile</code>, <code>held_item</code>, <code>max_uses</code>, and <code>drops</code> (a list of <code>item_id</code>, <code>chance_percent</code>, <code>min_count</code>, <code>max_count</code>), plus <code>farm_block</code>.</p>
+<blockquote>Want to add a new farm? Copy an existing entry, change the values, and restart — no code editing required.</blockquote>
+
+<div class="footer">
+  <span>AFK Farms · Fabric 1.21.11</span>
+  <a href="https://github.com/NoviscK/afkfarms">GitHub</a>
+</div>
+</div>
+</body>
+</html>
