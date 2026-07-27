@@ -29,3 +29,4 @@ Mod para Minecraft (Fabric 1.21.11) que deixa farms de mobs rodando automaticame
 
 - [📜 Changelog completo](/changelog/)
 - Repositório: [github.com/NoviscK/afkfarms](https://github.com/NoviscK/afkfarms)
+

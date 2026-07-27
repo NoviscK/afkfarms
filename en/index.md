@@ -28,4 +28,4 @@ A Minecraft mod (Fabric 1.21.11) that runs mob farms automatically — even whil
 ## Links
 
 - [📜 Full changelog](/en/changelog/)
-- Repository: [github.com/NoviscK/afkfarms.github.io](https://github.com/NoviscK/afkfarms.github.io)
+- Repository: [github.com/NoviscK/afkfarms](https://github.com/NoviscK/afkfarms)
