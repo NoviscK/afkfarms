@@ -147,6 +147,16 @@ pre {
 }
 pre code { background: none; color: var(--text); padding: 0; }
 
+.recipe-shot {
+  display: block;
+  max-width: 100%;
+  width: 480px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin: .8em 0 1.4em;
+}
+
 blockquote {
   margin: 1.4em 0;
   padding: 14px 18px;
